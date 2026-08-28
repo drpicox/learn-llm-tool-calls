@@ -20,3 +20,11 @@ state, one question.
 
     cd 01-now
     node index.js "how long until midnight?"
+
+## 02-hangman
+
+Adds a tool that has to keep a secret from the model. The word lives in a
+module variable — the only place that isn't the context.
+
+    cd 02-hangman
+    node index.js
