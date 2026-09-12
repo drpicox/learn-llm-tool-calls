@@ -1,6 +1,7 @@
 # Tool calls, from the inside
 
-Companion code for the series. No dependencies — Node 18+ already has `fetch`.
+Companion code for the series. Node 18+ already has `fetch`; the only
+dependency is `zod`, from `03-validation` on (`npm install` inside the folder).
 
 Each folder is self-contained on purpose: the agent loop is duplicated rather
 than shared, so the diff between two folders is exactly what changed between
@@ -27,4 +28,15 @@ Adds a tool that has to keep a secret from the model. The word lives in a
 module variable — the only place that isn't the context.
 
     cd 02-hangman
+    node index.js
+
+## 03-validation
+
+From *Validation Fixed Half of My Tool Call Errors*. A `tool()` helper builds
+each tool from a zod schema, validates the input and answers with an error
+object when it is wrong. Hangman is split into three tools that do one thing
+each: `hangman_new`, `hangman_guess` and `hangman_board`.
+
+    cd 03-validation
+    npm install
     node index.js

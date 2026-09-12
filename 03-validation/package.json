@@ -1,0 +1,7 @@
+{
+  "name": "03-validation",
+  "type": "module",
+  "dependencies": {
+    "zod": "^4.0.0"
+  }
+}
