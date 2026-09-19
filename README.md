@@ -16,14 +16,15 @@ Override the model with `MODEL=... node index.js`.
 
 ## 01-now
 
-The loop from *A Tool Call Is Just Text and a Loop You Own*. One tool, no
-state, one question.
+From [*LLMs Never Call Tools*](https://drpicox.medium.com/llms-never-call-tools-5904ac72d686).
+One tool, no state, one question.
 
     cd 01-now
     node index.js "how long until midnight?"
 
 ## 02-hangman
 
+From [*An LLM Can't Keep a Secret*](https://drpicox.medium.com/an-llm-cant-keep-a-secret-a87216dcc461).
 Adds a tool that has to keep a secret from the model. The word lives in a
 module variable — the only place that isn't the context.
 
@@ -32,7 +33,8 @@ module variable — the only place that isn't the context.
 
 ## 03-validation
 
-From *Validation Fixed Half of My Tool Call Errors*. A `tool()` helper builds
+From [*Validation Fixed Half of My Tool Call Errors*](https://drpicox.medium.com/validation-fixed-half-of-my-tool-call-errors-e0af7ce10d2d).
+A `tool()` helper builds
 each tool from a zod schema, validates the input and answers with an error
 object when it is wrong. Hangman is split into three tools that do one thing
 each: `hangman_new`, `hangman_guess` and `hangman_board`.
@@ -43,8 +45,8 @@ each: `hangman_new`, `hangman_guess` and `hangman_board`.
 
 ## 04-normalize
 
-From *Normalize, Don't Reject: Tool Calls the Human Way*. Same three tools,
-but `hangman_guess` no longer rejects ` A ` for not being `a`: the schema only
+From [*Normalize, Don't Reject: Tool Calls the Human Way*](https://drpicox.medium.com/normalize-dont-reject-tool-calls-the-human-way-4e597b18479d).
+Same three tools, but `hangman_guess` no longer rejects ` A ` for not being `a`: the schema only
 asks for a string, the tool trims and lowercases it, and each check that the
 validator used to do now answers with its own error and a hint on how to fix
 it. Diff `hangman.js` against `03-validation` to see the whole change.
