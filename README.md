@@ -40,3 +40,15 @@ each: `hangman_new`, `hangman_guess` and `hangman_board`.
     cd 03-validation
     npm install
     node index.js
+
+## 04-normalize
+
+From *Normalize, Don't Reject: Tool Calls the Human Way*. Same three tools,
+but `hangman_guess` no longer rejects ` A ` for not being `a`: the schema only
+asks for a string, the tool trims and lowercases it, and each check that the
+validator used to do now answers with its own error and a hint on how to fix
+it. Diff `hangman.js` against `03-validation` to see the whole change.
+
+    cd 04-normalize
+    npm install
+    node index.js
