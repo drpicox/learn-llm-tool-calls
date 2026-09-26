@@ -1,0 +1,7 @@
+{
+  "name": "05-time-travel",
+  "type": "module",
+  "dependencies": {
+    "zod": "^4.0.0"
+  }
+}

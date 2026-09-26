@@ -54,3 +54,16 @@ it. Diff `hangman.js` against `03-validation` to see the whole change.
     cd 04-normalize
     npm install
     node index.js
+
+## 05-time-travel
+
+From [*Time Travel for Tool Calls*](https://drpicox.medium.com/time-travel-for-tool-calls-2e90833f5678).
+Normalizing still happens, but now the model never finds out it was wrong:
+every tool answers with an envelope `{ result, rewrite? }`, and when
+`hangman_guess` had to fix ` É ` into `e`, the agent loop in `chat.js`
+rewrites the call already in the context so it says `e` from the start.
+Each fixed call becomes one more example of the call done right.
+
+    cd 05-time-travel
+    npm install
+    node index.js
